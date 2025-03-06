@@ -16,74 +16,33 @@
 #endif
 
 
-
-std::vector<std::string> paths;
-#ifdef _WIN32
-paths = {""}
-#endif
-// Function to check if a path exists
-bool pathExists(const std::string& path) {
-    // return fs::exists(path);
-    return true;
-}
-
-// Function to detect the Steam path
-std::map<std::string, std::string> getGamePaths(){
-    std::map<std::string, std::string> paths;
-    std::string steam;
-    std::string epicgames;
-    #ifdef _WIN32
-    std::string path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\";
-    if (pathExists(path)) {
-        steam = path;
-    }
-    path = "C:\\Program Files\\Epic Games\\";
-    if (pathExists(path)) {
-        epicgames = path;
-    }
-    #endif
-
-    // Linux
-    #ifdef __linux__
-    const char* homeDir = std::getenv("HOME");
-    std::string path = std::string(homeDir) + "/.steam/steam/steamapps/common/";
-    if (pathExists(path)) {
-        steam = path;
-    }
-    path = "~/.local/share/epicgames/";
-    if (pathExists(path)) {
-        epicgames = path;
-    }
-    #endif
-
-    // macOS
-    #ifdef __APPLE__
-    const char* homeDir = std::getenv("HOME");
-    std::string path = std::string(homeDir) + "/Library/Application Support/Steam/steamapps/common/";
-    if (pathExists(path)) {
-        steam = path;
-    }
-    std::string path = "~/Library/Application Support/Epic/";
-    if (pathExists(path)) {
-        epicgames = path;
-    }
-    #endif
-    paths.emplace("steam", steam);
-    paths.emplace("epicgames", epicgames);
-    return paths;
-}
+// namespace fs = std::filesystem;
 
 
 // Add similar functions for EA App, Uplay, GOG, etc...
 
 int main() {
-    std::map<std::string, std::string> gamePaths = getGamePaths();
-    if(!gamePaths.empty()){
-        std::ofstream file("");
-        if(file.is_open()){
-        }
-        else{
-            std::cerr << "Failed to open xml file";
+    std::ifstream file("path.json");
+
+    nlohmann::json json = nlohmann::json::parse(file);
+    for(const auto obj: json){
+        std::string type = obj["type"];
+        type = type.substr(0, type.length() - 1);
+        for(const auto obj1: obj[type]){
+            std::string os = "windows";
+            #ifdef __linux__
+                os = "linux";
+            #endif
+            #ifdef __APPLE__
+                os = "macos";
+            #endif
+            nlohmann::json::array_t top = obj1[os]["toppath"];
+            // for(const auto t: top){
+            //     // if(fs::exists(t)){
+
+            //     // }
+            // }
+            // std::cout << obj1["name"] << std::endl;
         }
     }
     return 0;
