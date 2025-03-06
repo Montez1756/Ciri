@@ -21,7 +21,7 @@ int main(){
     for(int i=0; i<commandList.size(); i++){
         auto it = std::find(openCMDS.begin(), openCMDS.end(), commandList[i]);
         if(it != openCMDS.end()){
-
+            
         }
     }
     return 0;

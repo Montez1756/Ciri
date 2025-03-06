@@ -1,0 +1,248 @@
+[
+    {
+        "type": "launchers",
+        "launcher": [
+            {
+                "name": "epic games",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files (x86)/Epic Games",
+                        "C:/Program Files/Epic Games"
+                    ],
+                    "exe": "/Launcher/Portal/Binaries/Win64/EpicGamesLauncher.exe",
+                    "games": "/"
+                },
+                "linux": {
+                    "toppath": [
+                        "~/.wine/drive_c/Program Files/Epic Games"
+                    ],
+                    "exe": "/Launcher/Portal/Binaries/Win64/EpicGamesLauncher.exe",
+                    "games": "/"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/Epic Games Launcher.app",
+                    "games": "/Epic Games"
+                }
+            },
+            {
+                "name": "steam",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files (x86)/Steam",
+                        "C:/Program Files/Steam"
+                    ],
+                    "exe": "/steam.exe",
+                    "games": "/steamapps/common"
+                },
+                "linux": {
+                    "toppath": [
+                        "~/.steam/steam",
+                        "~/.local/share/Steam"
+                    ],
+                    "exe": "/steam.sh",
+                    "games": "/steamapps/common"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/Steam.app",
+                    "games": "/steamapps/common"
+                }
+            },
+            {
+                "name": "ea games",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files (x86)/Origin",
+                        "C:/Program Files/Origin",
+                        "C:/Program Files/EA Games",
+                        "C:/Program Files/EA Desktop"
+                    ],
+                    "exe": "/Origin.exe",
+                    "games": "/Games"
+                },
+                "linux": {
+                    "toppath": [
+                        "~/.wine/drive_c/Program Files/Origin",
+                        "~/.wine/drive_c/Program Files/EA Games"
+                    ],
+                    "exe": "/Origin.exe",
+                    "games": "/Games"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": [
+                        "/Origin.app",
+                        "/EA Desktop.app"
+                    ],
+                    "games": "/EA Games"
+                }
+            },
+            {
+                "name": "ubisoft connect",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files (x86)/Ubisoft",
+                        "C:/Program Files/Ubisoft"
+                    ],
+                    "exe": "/UbisoftConnect.exe",
+                    "games": "/Ubisoft Game Launcher/games"
+                },
+                "linux": {
+                    "toppath": [
+                        "~/.wine/drive_c/Program Files/Ubisoft"
+                    ],
+                    "exe": "/UbisoftConnect.exe",
+                    "games": "/Ubisoft Game Launcher/games"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/Ubisoft Connect.app",
+                    "games": "/Ubisoft Game Launcher/games"
+                }
+            },
+            {
+                "name": "battle.net",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files (x86)/Battle.net",
+                        "C:/Program Files/Battle.net"
+                    ],
+                    "exe": "/Battle.net Launcher.exe",
+                    "games": "/"
+                },
+                "linux": {
+                    "toppath": [
+                        "~/.wine/drive_c/Program Files/Battle.net"
+                    ],
+                    "exe": "/Battle.net Launcher.exe",
+                    "games": "/"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/Battle.net.app",
+                    "games": "/"
+                }
+            },
+            {
+                "name": "gog galaxy",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files (x86)/GOG Galaxy",
+                        "C:/Program Files/GOG Galaxy"
+                    ],
+                    "exe": "/GalaxyClient.exe",
+                    "games": "/Games"
+                },
+                "linux": {
+                    "toppath": [
+                        "~/.wine/drive_c/Program Files/GOG Galaxy"
+                    ],
+                    "exe": "/GalaxyClient.exe",
+                    "games": "/Games"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/GOG Galaxy.app",
+                    "games": "/Games"
+                }
+            }
+        ],
+        "games": [
+            {
+                "name": "",
+                "path": ""
+            }
+        ]
+    },
+    {
+        "type": "browsers",
+        "browser": [
+            {
+                "name": "chrome",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files/Google",
+                        "C:/Program Files (x86)/Google",
+                        "C:/Users/<USERNAME>/AppData/Local/Google"
+                    ],
+                    "exe": "/Chrome/Application/chrome.exe"
+                },
+                "linux": {
+                    "toppath": [
+                        "/usr",
+                        "/usr/local",
+                        "/opt/google",
+                        "/snap",
+                        "/var/lib/flatpak/app/org.chromium.Chromium/current/active/files"
+                    ],
+                    "exe": "/chrome/google-chrome"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/Google Chrome.app/Contents/MacOS/Google Chrome"
+                }
+            },
+            {
+                "name": "firefox",
+                "windows": {
+                    "toppath": [
+                        "C:/Program Files/Mozilla Firefox",
+                        "C:/Program Files (x86)/Mozilla Firefox"
+                    ],
+                    "exe": "/firefox.exe"
+                },
+                "linux": {
+                    "toppath": [
+                        "/usr/lib/firefox",
+                        "/usr/local/lib/firefox",
+                        "/opt/firefox"
+                    ],
+                    "exe": "/firefox"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/Firefox.app/Contents/MacOS/firefox"
+                }
+            },
+            {
+                "name": "operagx",
+                "windows": {
+                    "toppath": [
+                        "C:/Users/<USERNAME>/AppData/Local/Programs/Opera GX"
+                    ],
+                    "exe": "/launcher.exe"
+                },
+                "linux": {
+                    "toppath": [
+                        "/usr/lib/opera",
+                        "/usr/local/lib/opera"
+                    ],
+                    "exe": "/opera"
+                },
+                "macos": {
+                    "toppath": [
+                        "/Applications"
+                    ],
+                    "exe": "/Opera GX.app/Contents/MacOS/Opera GX"
+                }
+            }
+        ]
+    }
+]
