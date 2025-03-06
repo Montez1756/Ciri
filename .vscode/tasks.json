@@ -10,7 +10,7 @@
                 "init.cpp",
                 "-I${workspaceFolder}/external/json/include",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
+                "Ciri.exe",
             ],
             "options": {
                 "cwd": "${fileDirname}"

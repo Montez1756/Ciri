@@ -36,13 +36,19 @@ int main() {
             #ifdef __APPLE__
                 os = "macos";
             #endif
-            nlohmann::json::array_t top = obj1[os]["toppath"];
-            // for(const auto t: top){
-            //     // if(fs::exists(t)){
 
-            //     // }
-            // }
-            // std::cout << obj1["name"] << std::endl;
+            nlohmann::json::array_t top = obj1[os]["toppath"];
+            nlohmann::json::array_t exes = obj1[os]["exe"];
+            for(const auto t: top){
+                // if(fs::exists(t)){
+
+                // }
+                std::cout << t << std::endl;
+                // for(const auto exe: exes)
+                // {
+                //     // std::string exePath = t + exe;
+                // }
+            }
         }
     }
     return 0;
