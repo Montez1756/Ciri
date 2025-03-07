@@ -18,11 +18,8 @@
 
 // namespace fs = std::filesystem;
 
-
-// Add similar functions for EA App, Uplay, GOG, etc...
-
 int main() {
-    std::ifstream file("path.json");
+    std::ifstream file("data/path.json");
 
     nlohmann::json json = nlohmann::json::parse(file);
     for(const auto obj: json){
@@ -37,16 +34,17 @@ int main() {
                 os = "macos";
             #endif
 
-            nlohmann::json::array_t top = obj1[os]["toppath"];
-            nlohmann::json::array_t exes = obj1[os]["exe"];
+            std::vector<nlohmann::json::string_t> top = obj1[os]["toppath"];
+            std::vector<nlohmann::json::string_t> exes = obj1[os]["exe"];
             for(const auto t: top){
+                std::cout << t << std::endl;
                 // if(fs::exists(t)){
 
-                // }
-                std::cout << t << std::endl;
-                // for(const auto exe: exes)
-                // {
-                //     // std::string exePath = t + exe;
+                //     for(const auto exe: exes){
+                //         if(fs::exists(t + exe)){
+                //             std::cout << t + exe  << std::endl;
+                //         }
+                //     }
                 // }
             }
         }
