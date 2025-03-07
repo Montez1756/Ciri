@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <nlohmann/json.hpp>
+#include "ciriConsole.h"
 #ifdef _WIN32
 #include <windows.h>
 #elif __linux__
@@ -19,35 +20,43 @@
 // namespace fs = std::filesystem;
 
 int main() {
-    std::ifstream file("data/path.json");
+    // std::ifstream file("data/path.json");
 
-    nlohmann::json json = nlohmann::json::parse(file);
-    for(const auto obj: json){
-        std::string type = obj["type"];
-        type = type.substr(0, type.length() - 1);
-        for(const auto obj1: obj[type]){
-            std::string os = "windows";
-            #ifdef __linux__
-                os = "linux";
-            #endif
-            #ifdef __APPLE__
-                os = "macos";
-            #endif
+    // nlohmann::json json = nlohmann::json::parse(file);
+    // for(const auto obj: json){
+    //     std::string type = obj["type"];
+    //     type = type.substr(0, type.length() - 1);
+    //     for(const auto obj1: obj[type]){
+    //         std::string os = "windows";
+    //         #ifdef __linux__
+    //             os = "linux";
+    //         #endif
+    //         #ifdef __APPLE__
+    //             os = "macos";
+    //         #endif
 
-            std::vector<nlohmann::json::string_t> top = obj1[os]["toppath"];
-            std::vector<nlohmann::json::string_t> exes = obj1[os]["exe"];
-            for(const auto t: top){
-                std::cout << t << std::endl;
-                // if(fs::exists(t)){
+    //         std::vector<nlohmann::json::string_t> top = obj1[os]["toppath"];
+    //         std::vector<nlohmann::json::string_t> exes = obj1[os]["exe"];
+    //         for(const auto t: top){
+    //             std::cout << t << std::endl;
+    //             // if(fs::exists(t)){
 
-                //     for(const auto exe: exes){
-                //         if(fs::exists(t + exe)){
-                //             std::cout << t + exe  << std::endl;
-                //         }
-                //     }
-                // }
-            }
-        }
+    //             //     for(const auto exe: exes){
+    //             //         if(fs::exists(t + exe)){
+    //             //             std::cout << t + exe  << std::endl;
+    //             //         }
+    //             //     }
+    //             // }
+    //         }
+    //     }
+    // }
+    ciriConsole console;
+
+    while(true){
+        std::string command;
+        std::cout << "Enter command:" << std::endl;
+        std::getline(std::cin, command);
+        console.runCommand(command);
     }
     return 0;
 }

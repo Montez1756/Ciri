@@ -1,0 +1,2 @@
+test/chrome.exe
+test/firefox
